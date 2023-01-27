@@ -7,7 +7,7 @@ import Icon from "react-native-vector-icons/FontAwesome5";
 import { Home } from "./home/home";
 import { Sell } from "./sell/sell";
 import { Favorite } from "./favorite/favorite";
-import { Profile } from "./profile/profile";
+import { MainProfile } from "./profile/mainProfile";
 
 const HomeScreen = () => {
   return <Home />;
@@ -22,7 +22,7 @@ const FavoriteScreen = () => {
 };
 
 const ProfileScreen = () => {
-  return <Profile />;
+  return <MainProfile />;
 };
 
 const Tab = createBottomTabNavigator();

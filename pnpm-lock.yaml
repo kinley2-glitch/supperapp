@@ -10,22 +10,30 @@ importers:
   .:
     specifiers:
       '@manypkg/cli': ^0.19.2
+      '@react-navigation/material-top-tabs': ^6.5.2
+      '@react-navigation/native': ^6.1.2
       '@typescript-eslint/eslint-plugin': ^5.46.0
       '@typescript-eslint/parser': ^5.46.0
       eslint: ^8.30.0
       eslint-config-prettier: ^8.6.0
       prettier: ^2.8.1
       prettier-plugin-tailwindcss: ^0.2.1
+      react-native-elements: ^3.4.3
+      react-native-ratings: ^8.1.0
       turbo: ^1.6.3
       typescript: ^4.9.4
     dependencies:
       '@manypkg/cli': 0.19.2
+      '@react-navigation/material-top-tabs': 6.5.2_dbjmmvju7tf5oaejdzuvkep6dm
+      '@react-navigation/native': 6.1.2
       '@typescript-eslint/eslint-plugin': 5.48.0_k73wpmdolxikpyqun3p36akaaq
       '@typescript-eslint/parser': 5.48.0_iukboom6ndih5an6iafl45j2fe
       eslint: 8.31.0
       eslint-config-prettier: 8.6.0_eslint@8.31.0
       prettier: 2.8.2
       prettier-plugin-tailwindcss: 0.2.1_prettier@2.8.2
+      react-native-elements: 3.4.3
+      react-native-ratings: 8.1.0
       turbo: 1.6.3
       typescript: 4.9.4
 
@@ -38,6 +46,7 @@ importers:
       '@babel/runtime': ^7.19.0
       '@expo/config-plugins': ^5.0.4
       '@react-navigation/bottom-tabs': ^6.5.3
+      '@react-navigation/drawer': ^6.5.7
       '@react-navigation/native': ^6.1.2
       '@shopify/flash-list': 1.3.1
       '@tanstack/react-query': ^4.20.4
@@ -46,6 +55,7 @@ importers:
       '@trpc/server': ^10.8.1
       '@types/react': ^18.0.25
       '@types/react-native': ~0.70.8
+      '@types/react-native-vector-icons': ^6.4.13
       eslint: ^8.30.0
       expo: ~47.0.12
       expo-splash-screen: ~0.17.5
@@ -55,7 +65,8 @@ importers:
       react: 18.1.0
       react-dom: 18.1.0
       react-native: 0.70.5
-      react-native-safe-area-context: 4.4.1
+      react-native-paper: ^5.1.4
+      react-native-safe-area-context: ^4.4.1
       react-native-vector-icons: ^9.2.0
       tailwindcss: ^3.2.4
       typescript: ^4.9.4
@@ -63,6 +74,7 @@ importers:
       '@acme/api': link:../../packages/api
       '@acme/tailwind-config': link:../../packages/config/tailwind
       '@react-navigation/bottom-tabs': 6.5.3_7faqyzkwzhg3btbxjjkwqxstpy
+      '@react-navigation/drawer': 6.5.7_7faqyzkwzhg3btbxjjkwqxstpy
       '@react-navigation/native': 6.1.2_tj3nonr5gneraukzjkxpsiy7yu
       '@shopify/flash-list': 1.3.1_fe2krar3w7oppftlpocrmufp6u
       '@tanstack/react-query': 4.22.0_2bkajway7msrchxwrvhplxy5ru
@@ -76,6 +88,7 @@ importers:
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
       react-native: 0.70.5_rnbco5eodjkfp6ucueusre3z4i_lahc5xespok57ijioavxabv3he
+      react-native-paper: 5.1.4_j4s4rhr2qc6fx6xx2vngn7raku
       react-native-safe-area-context: 4.4.1_tj3nonr5gneraukzjkxpsiy7yu
       react-native-vector-icons: 9.2.0
     devDependencies:
@@ -85,6 +98,7 @@ importers:
       '@expo/config-plugins': 5.0.4
       '@types/react': 18.0.26
       '@types/react-native': 0.70.8
+      '@types/react-native-vector-icons': 6.4.13
       eslint: 8.31.0
       postcss: 8.4.21
       tailwindcss: 3.2.4_postcss@8.4.21
@@ -1481,6 +1495,16 @@ packages:
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
 
+  /@callstack/react-theme-provider/3.0.8_react@18.1.0:
+    resolution: {integrity: sha512-5U231sYY2sqQOaELX0WBCn+iluV8bFaXIS7em03k4W5Xz0AhGvKlnpLIhDGFP8im/SvNW7/2XoR0BsClhn9t6Q==}
+    peerDependencies:
+      react: '>=16.3.0'
+    dependencies:
+      deepmerge: 3.3.0
+      hoist-non-react-statics: 3.3.2
+      react: 18.1.0
+    dev: false
+
   /@changesets/types/4.1.0:
     resolution: {integrity: sha512-LDQvVDv5Kb50ny2s25Fhm3d9QSZimsoUGBsUioj6MC3qbMUCuC8GPIvk/M6IvXx3lYhAs0lwWUQLb+VIEUCECw==}
     dev: false
@@ -2459,6 +2483,19 @@ packages:
       warn-once: 0.1.1
     dev: false
 
+  /@react-navigation/core/6.4.6:
+    resolution: {integrity: sha512-6zaAgUT5k4vhJlddUk2l52RZyMkMelHdrRv1cL57ALi2RZzERdgmbiMKhJerxFLn9S8E3PUe8vwxHzjHOZKG4w==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      '@react-navigation/routers': 6.1.6
+      escape-string-regexp: 4.0.0
+      nanoid: 3.3.4
+      query-string: 7.1.3
+      react-is: 16.13.1
+      use-latest-callback: 0.1.5
+    dev: false
+
   /@react-navigation/core/6.4.6_react@18.1.0:
     resolution: {integrity: sha512-6zaAgUT5k4vhJlddUk2l52RZyMkMelHdrRv1cL57ALi2RZzERdgmbiMKhJerxFLn9S8E3PUe8vwxHzjHOZKG4w==}
     peerDependencies:
@@ -2473,6 +2510,26 @@ packages:
       use-latest-callback: 0.1.5
     dev: false
 
+  /@react-navigation/drawer/6.5.7_7faqyzkwzhg3btbxjjkwqxstpy:
+    resolution: {integrity: sha512-k8l+G05WrP+Il8USxEcaBtZ2Jv/JFn9dS8O1IlqIoddZITrFjsyDhk3zxeE3RWDcc9u0o7HgHfgKHPXxcT8QRQ==}
+    peerDependencies:
+      '@react-navigation/native': ^6.0.0
+      react: '*'
+      react-native: '*'
+      react-native-gesture-handler: '>= 1.0.0'
+      react-native-reanimated: '>= 1.0.0'
+      react-native-safe-area-context: '>= 3.0.0'
+      react-native-screens: '>= 3.0.0'
+    dependencies:
+      '@react-navigation/elements': 1.3.13_7faqyzkwzhg3btbxjjkwqxstpy
+      '@react-navigation/native': 6.1.2_tj3nonr5gneraukzjkxpsiy7yu
+      color: 4.2.3
+      react: 18.1.0
+      react-native: 0.70.5_rnbco5eodjkfp6ucueusre3z4i_lahc5xespok57ijioavxabv3he
+      react-native-safe-area-context: 4.4.1_tj3nonr5gneraukzjkxpsiy7yu
+      warn-once: 0.1.1
+    dev: false
+
   /@react-navigation/elements/1.3.13_7faqyzkwzhg3btbxjjkwqxstpy:
     resolution: {integrity: sha512-LqqK5s2ZfYHn2cQ376jC5V9dQztLH5ixkkJj9WR7JY2g4SghDd39WJhL3Jillw1Mu3F3b9sZwvAK+QkXhnDeAA==}
     peerDependencies:
@@ -2485,6 +2542,32 @@ packages:
       react: 18.1.0
       react-native: 0.70.5_rnbco5eodjkfp6ucueusre3z4i_lahc5xespok57ijioavxabv3he
       react-native-safe-area-context: 4.4.1_tj3nonr5gneraukzjkxpsiy7yu
+    dev: false
+
+  /@react-navigation/material-top-tabs/6.5.2_dbjmmvju7tf5oaejdzuvkep6dm:
+    resolution: {integrity: sha512-i/R3bEXVE5pygWP0dOMdFNOVzrQyHXL0lbqLfQx5HZXwbvCrpUBFqOED3bWLBrBOUhHQSXfYgTuteAfIF5hzzg==}
+    peerDependencies:
+      '@react-navigation/native': ^6.0.0
+      react: '*'
+      react-native: '*'
+      react-native-pager-view: '>= 4.0.0'
+      react-native-tab-view: '>= 3.0.0'
+    dependencies:
+      '@react-navigation/native': 6.1.2
+      color: 4.2.3
+      warn-once: 0.1.1
+    dev: false
+
+  /@react-navigation/native/6.1.2:
+    resolution: {integrity: sha512-qLUe0asHofr5EhxKjvUBJ9DrPPmR4535IEwmW3oU4DRb3cLbNysjajJKHL8kcYtqPvn9Bx9QZG2x0PMb2vN23A==}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+    dependencies:
+      '@react-navigation/core': 6.4.6
+      escape-string-regexp: 4.0.0
+      fast-deep-equal: 3.1.3
+      nanoid: 3.3.4
     dev: false
 
   /@react-navigation/native/6.1.2_tj3nonr5gneraukzjkxpsiy7yu:
@@ -2713,7 +2796,6 @@ packages:
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
-    dev: true
 
   /@types/react-dom/18.0.10:
     resolution: {integrity: sha512-E42GW/JA4Qv15wQdqJq8DL4JhNpB3prJgjgapN3qJT9K2zO5IIAQh4VXvCEDupoqAwnz0cY4RlXeC/ajX5SFHg==}
@@ -2721,11 +2803,16 @@ packages:
       '@types/react': 18.0.26
     dev: true
 
+  /@types/react-native-vector-icons/6.4.13:
+    resolution: {integrity: sha512-1PqFoKuXTSzMHwGMAr+REdYJBQAbe9xrww3ecZR0FsHcD1K+vGS/rxuAriL4rsI6+p69sZQjDzpEVAbDQcjSwA==}
+    dependencies:
+      '@types/react': 18.0.26
+      '@types/react-native': 0.70.8
+
   /@types/react-native/0.70.8:
     resolution: {integrity: sha512-jvs5QMOrlyi0ScfT5Brha2roDoOWtbIOadNkp0jsueVen5+pH4SQAYtzL6xu0+dIcx3J/5LtZ/JYby2C1/zUug==}
     dependencies:
       '@types/react': 18.0.26
-    dev: true
 
   /@types/react/18.0.26:
     resolution: {integrity: sha512-hCR3PJQsAIXyxhTNSiDFY//LhnMZWpNNr5etoCqx/iUfGc5gXWtQR2Phl908jVR6uPXacojQWTg4qRpkxTuGug==}
@@ -2733,7 +2820,6 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
       csstype: 3.1.1
-    dev: true
 
   /@types/responselike/1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
@@ -2743,7 +2829,6 @@ packages:
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
-    dev: true
 
   /@types/semver/6.2.3:
     resolution: {integrity: sha512-KQf+QAMWKMrtBMsB8/24w53tEsxllMj6TuA80TT/5igJalLI/zm0L3oXRbIAl4Ohfc85gyHX/jhMwsVkmhLU4A==}
@@ -3770,6 +3855,13 @@ packages:
       simple-swizzle: 0.2.2
     dev: false
 
+  /color/3.2.1:
+    resolution: {integrity: sha512-aBl7dZI9ENN6fUGC7mWpMTPNHmWUSNan9tuWN6ahh5ZLNk9baLJOnSMlrQkHcrfFgz2/RigjUVAjdx36VcemKA==}
+    dependencies:
+      color-convert: 1.9.3
+      color-string: 1.9.1
+    dev: false
+
   /color/4.2.3:
     resolution: {integrity: sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==}
     engines: {node: '>=12.5.0'}
@@ -3992,7 +4084,6 @@ packages:
 
   /csstype/3.1.1:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
-    dev: true
 
   /dag-map/1.0.2:
     resolution: {integrity: sha512-+LSAiGFwQ9dRnRdOeaj7g47ZFJcOUPukAP8J3A3fuZ1g9Y44BG+P1sgApjLXTQPOzC4+7S9Wr8kXsfpINM4jpw==}
@@ -4064,6 +4155,11 @@ packages:
 
   /deepmerge/3.3.0:
     resolution: {integrity: sha512-GRQOafGHwMHpjPx9iCvTgpu9NojZ49q794EEL94JVEw6VaeA8XTUyBKvAkOOjBX9oJNiV6G3P+T+tihFjo2TqA==}
+    engines: {node: '>=0.10.0'}
+    dev: false
+
+  /deepmerge/4.2.2:
+    resolution: {integrity: sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==}
     engines: {node: '>=0.10.0'}
     dev: false
 
@@ -5450,6 +5546,12 @@ packages:
       source-map: 0.7.4
     dev: false
 
+  /hoist-non-react-statics/3.3.2:
+    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
+    dependencies:
+      react-is: 16.13.1
+    dev: false
+
   /hosted-git-info/3.0.8:
     resolution: {integrity: sha512-aXpmwoOhRBrw6X3j0h5RloK4x1OzsxMPyxqIHyNfSe2pypkVTZFpEiRoSipPEPlMrh0HW/XsjkJ5WgnCirpNUw==}
     engines: {node: '>=10'}
@@ -6203,6 +6305,10 @@ packages:
 
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
+
+  /lodash.isequal/4.5.0:
+    resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
+    dev: false
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
@@ -7185,6 +7291,11 @@ packages:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
+  /opencollective-postinstall/2.0.3:
+    resolution: {integrity: sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q==}
+    hasBin: true
+    dev: false
+
   /openid-client/5.3.1:
     resolution: {integrity: sha512-RLfehQiHch9N6tRWNx68cicf3b1WR0x74bJWHRc25uYIbSRwjxYcTFaRnzbbpls5jroLAaB/bFIodTgA5LJMvw==}
     dependencies:
@@ -7796,8 +7907,63 @@ packages:
       - supports-color
     dev: false
 
+  /react-native-elements/3.4.3:
+    resolution: {integrity: sha512-VtZc25EecPZyUBER85zFK9ZbY6kkUdcm1ZwJ9hdoGSCr1R/GFgxor4jngOcSYeMvQ+qimd5No44OVJW3rSJECA==}
+    requiresBuild: true
+    peerDependencies:
+      react-native-safe-area-context: '>= 3.0.0'
+      react-native-vector-icons: '>7.0.0'
+    dependencies:
+      '@types/react-native-vector-icons': 6.4.13
+      color: 3.2.1
+      deepmerge: 4.2.2
+      hoist-non-react-statics: 3.3.2
+      lodash.isequal: 4.5.0
+      opencollective-postinstall: 2.0.3
+      react-native-ratings: 8.0.4
+      react-native-size-matters: 0.3.1
+    transitivePeerDependencies:
+      - react
+      - react-native
+    dev: false
+
   /react-native-gradle-plugin/0.70.3:
     resolution: {integrity: sha512-oOanj84fJEXUg9FoEAQomA8ISG+DVIrTZ3qF7m69VQUJyOGYyDZmPqKcjvRku4KXlEH6hWO9i4ACLzNBh8gC0A==}
+    dev: false
+
+  /react-native-paper/5.1.4_j4s4rhr2qc6fx6xx2vngn7raku:
+    resolution: {integrity: sha512-MpT7zmq/+bSXrKtjUHDKYadTSZvhE2d15oH+Sz77F+xq0/Xqwtg9aX3iHU4x0P92PRubRAbKiLkV0Qi9+beN7g==}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+      react-native-safe-area-context: '*'
+      react-native-vector-icons: '*'
+    dependencies:
+      '@callstack/react-theme-provider': 3.0.8_react@18.1.0
+      color: 3.2.1
+      react: 18.1.0
+      react-native: 0.70.5_rnbco5eodjkfp6ucueusre3z4i_lahc5xespok57ijioavxabv3he
+      react-native-safe-area-context: 4.4.1_tj3nonr5gneraukzjkxpsiy7yu
+      react-native-vector-icons: 9.2.0
+      use-event-callback: 0.1.0_react@18.1.0
+    dev: false
+
+  /react-native-ratings/8.0.4:
+    resolution: {integrity: sha512-Xczu5lskIIRD6BEdz9A0jDRpEck/SFxRqiglkXi0u67yAtI1/pcJC76P4MukCbT8K4BPVl+42w83YqXBoBRl7A==}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+    dependencies:
+      lodash: 4.17.21
+    dev: false
+
+  /react-native-ratings/8.1.0:
+    resolution: {integrity: sha512-+QOJ4G3NjVkI1D+tk4EGx1dCvVfbD2nQdkrj9cXrcAoEiwmbep4z4bZbCKmWMpQ5h2dqbxABU8/eBnbDmvAc3g==}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+    dependencies:
+      lodash: 4.17.21
     dev: false
 
   /react-native-safe-area-context/4.4.1_tj3nonr5gneraukzjkxpsiy7yu:
@@ -7808,6 +7974,12 @@ packages:
     dependencies:
       react: 18.1.0
       react-native: 0.70.5_rnbco5eodjkfp6ucueusre3z4i_lahc5xespok57ijioavxabv3he
+    dev: false
+
+  /react-native-size-matters/0.3.1:
+    resolution: {integrity: sha512-mKOfBLIBFBcs9br1rlZDvxD5+mAl8Gfr5CounwJtxI6Z82rGrMO+Kgl9EIg3RMVf3G855a85YVqHJL2f5EDRlw==}
+    peerDependencies:
+      react-native: '*'
     dev: false
 
   /react-native-vector-icons/9.2.0:
@@ -9248,6 +9420,14 @@ packages:
     dependencies:
       querystringify: 2.2.0
       requires-port: 1.0.0
+    dev: false
+
+  /use-event-callback/0.1.0_react@18.1.0:
+    resolution: {integrity: sha512-5fTzY5UEXHMK5UR0NRkUz6TPfWmmX9fO8Tx3SnHrfMPdrQ7Rna0gDBy0r56SP68TwsP9DgwSBzeysCu3A/Z2NA==}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      react: 18.1.0
     dev: false
 
   /use-latest-callback/0.1.5:
