@@ -6,60 +6,117 @@ generator client {
 }
 
 datasource db {
-    provider = "sqlite"
+    provider = "mysql"
     url      = env("DATABASE_URL")
 }
 
-model Post {
-    id      String @id @default(cuid())
-    title   String
-    content String
-}
-
-// NextAuth.js Models
-// NOTE: When using postgresql, mysql or sqlserver, 
-// uncomment the @db.Text annotations below
-// @see https://next-auth.js.org/schemas/models
-model Account {
-    id                String  @id @default(cuid())
-    userId            String
-    type              String
-    provider          String
-    providerAccountId String
-    refresh_token     String? // @db.Text
-    access_token      String? // @db.Text
-    expires_at        Int?
-    token_type        String?
-    scope             String?
-    id_token          String? // @db.Text
-    session_state     String?
-    user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-    @@unique([provider, providerAccountId])
-}
-
-model Session {
-    id           String   @id @default(cuid())
-    sessionToken String   @unique
-    userId       String
-    expires      DateTime
-    user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-}
-
 model User {
-    id            String    @id @default(cuid())
-    name          String?
-    email         String?   @unique
-    emailVerified DateTime?
-    image         String?
-    accounts      Account[]
-    sessions      Session[]
+    userID      Int        @id @default(autoincrement())
+    name        String
+    userName    String     @unique
+    phoneNumber Int
+    photoID     String
+    posts       Post[]
+    favourites  Favourite?
+    rater       Rating?    @relation("raterStar")
+    receiver    Rating?    @relation("receiverStar")
 }
 
-model VerificationToken {
-    identifier String
-    token      String   @unique
-    expires    DateTime
+model Post {
+    postID      Int      @id
+    name        String
+    description String
+    location    String
+    condition   String
+    status      Status
+    owner       User     @relation(fields: [ownerId], references: [userID])
+    ownerId     Int      @unique
+    category    Category @relation(fields: [categoryId], references: [categoryID])
+    categoryId  Int
+    type        Type
+    images      Image[]
+    auction     Auction?
+}
 
-    @@unique([identifier, token])
+model Favourite {
+    likeID    Int  @id
+    user      User @relation(fields: [userId], references: [userID])
+    userId    Int  @unique
+    auctionId Int
+}
+
+model Image {
+    imageID Int    @id
+    link    String
+    post    Post   @relation(fields: [postId], references: [postID])
+    postId  Int
+}
+
+model Category {
+    categoryID Int    @id
+    name       String
+    Post       Post[]
+}
+
+model Auction {
+    auctionID        Int      @id
+    startTime        DateTime
+    endTime          DateTime
+    startPrice       Int
+    reservedPrice    Int
+    buyoutPrice      Int
+    highestBidderId  Int
+    highestBidAmount Int
+    bidTime          DateTime
+    post             Post     @relation(fields: [postId], references: [postID])
+    postId           Int      @unique
+    Rating           Rating[]
+    Chat             Chat[]
+}
+
+model Rating {
+    ratingID   Int      @id
+    rater      User     @relation("raterStar", fields: [raterID], references: [userID])
+    raterID    Int      @unique
+    receiver   User     @relation("receiverStar", fields: [receiverID], references: [userID])
+    receiverID Int      @unique
+    rating     Int
+    comment    String
+    timeStamp  DateTime
+    from       From
+    auction    Auction  @relation(fields: [auctionId], references: [auctionID])
+    auctionId  Int
+}
+
+model Chat {
+    chatID    Int       @id
+    auction   Auction   @relation(fields: [auctionId], references: [auctionID])
+    auctionId Int
+    Message   Message[]
+}
+
+model Message {
+    messageID Int      @id
+    chat      Chat     @relation(fields: [chatId], references: [chatID])
+    chatId    Int
+    message   String
+    fileLink  String
+    from      From
+    timeStamp DateTime
+}
+
+enum Status {
+    UPCOMING
+    LIVE
+    CLOSED
+}
+
+enum Type {
+    GOODS
+    SERVICES
+}
+
+enum From {
+    SELLER
+    BUYER
 }
