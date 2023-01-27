@@ -1,38 +1,60 @@
-import React from "react";
-import { View, Image, Text, SafeAreaView, StyleSheet } from "react-native";
-import { Card } from "react-native-paper";
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import React, { useState } from "react";
+import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 export const CardItem = () => {
+  const products = [
+    { name: "Acer", status: "live", username: "karama" },
+    { name: "Dell", status: "upcoming", username: "tim" },
+    { name: "3" },
+  ];
+
+  const [selectedIndices, setSelectedIndices] = useState<number[]>([]);
+
+  const onPress = (index: number) => {
+    if (selectedIndices.includes(index)) {
+      setSelectedIndices(selectedIndices.filter((i) => i !== index));
+    } else {
+      setSelectedIndices([...selectedIndices, index]);
+    }
+  };
+
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <Card>
-          <Image
-            className="bg-black"
-            source={{
-              uri: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.teahub.io%2Fviewwp%2FioiRmwR_iphone-wallpaper-hd-cute-girl-pic-with-high%2F&psig=AOvVaw0-XyD3WKYxybZ9KMTU1fVS&ust=1674731526048000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMC04qDL4vwCFQAAAAAdAAAAABAE",
-            }}
-            style={{ width: 200, height: 200 }}
+    <View>
+      <View className="pt-6">
+        {
+          <FlatList
+            data={products}
+            renderItem={({ item, index }) => (
+              <View className="mt-2 ml-1 mr-0.5 box-border h-52 w-44 rounded-xl border-opacity-25 p-4 shadow-sm md:my-2">
+                <View className="h-28 w-44">
+                  <Image
+                    source={require("../../assets/Images/dell.jpg")}
+                    className="h-28 w-36 object-scale-down "
+                  />
+                </View>
+
+                <Text>{item.name}</Text>
+                <Text>{item.status}</Text>
+                <Text>{item.username}</Text>
+
+                <View className="items-end">
+                  <TouchableOpacity onPress={() => onPress(index)}>
+                    <AntDesign
+                      name="heart"
+                      color={selectedIndices.includes(index) ? "red" : "black"}
+                      size={18}
+                    />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            )}
+            numColumns={2}
+            key={2}
           />
-          <Text style={styles.paragraph}>
-            React Native Card View for Android and IOS using
-            "react-native-paper"
-          </Text>
-        </Card>
+        }
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    width: 200,
-    justifyContent: "center",
-  },
-  paragraph: {
-    fontSize: 18,
-    fontWeight: "bold",
-    textAlign: "center",
-    padding: 20,
-  },
-});
