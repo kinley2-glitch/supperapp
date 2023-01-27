@@ -2808,6 +2808,10 @@ packages:
     dependencies:
       '@types/react': 18.0.26
       '@types/react-native': 0.70.8
+<<<<<<< HEAD
+=======
+    dev: true
+>>>>>>> 2b98818c285363f39422aec8266d6fafc77359e2
 
   /@types/react-native/0.70.8:
     resolution: {integrity: sha512-jvs5QMOrlyi0ScfT5Brha2roDoOWtbIOadNkp0jsueVen5+pH4SQAYtzL6xu0+dIcx3J/5LtZ/JYby2C1/zUug==}
@@ -7948,6 +7952,7 @@ packages:
       use-event-callback: 0.1.0_react@18.1.0
     dev: false
 
+<<<<<<< HEAD
   /react-native-ratings/8.0.4:
     resolution: {integrity: sha512-Xczu5lskIIRD6BEdz9A0jDRpEck/SFxRqiglkXi0u67yAtI1/pcJC76P4MukCbT8K4BPVl+42w83YqXBoBRl7A==}
     peerDependencies:
@@ -7966,6 +7971,8 @@ packages:
       lodash: 4.17.21
     dev: false
 
+=======
+>>>>>>> 2b98818c285363f39422aec8266d6fafc77359e2
   /react-native-safe-area-context/4.4.1_tj3nonr5gneraukzjkxpsiy7yu:
     resolution: {integrity: sha512-N9XTjiuD73ZpVlejHrUWIFZc+6Z14co1K/p1IFMkImU7+avD69F3y+lhkqA2hN/+vljdZrBSiOwXPkuo43nFQA==}
     peerDependencies:
