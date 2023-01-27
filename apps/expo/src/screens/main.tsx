@@ -1,7 +1,8 @@
 import React from "react";
 import { View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
+
+import { NavigationContainer } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
 import { Home } from "./home/home";
@@ -26,18 +27,10 @@ const ProfileScreen = () => {
 };
 
 const Tab = createBottomTabNavigator();
-const MyTheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    background: "white",
-  },
-};
-
 export const Main = () => {
   return (
     <View className="flex-1">
-      <NavigationContainer theme={MyTheme}>
+      <NavigationContainer>
         <Tab.Navigator>
           <Tab.Screen
             name="Home"
