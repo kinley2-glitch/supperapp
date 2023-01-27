@@ -25,7 +25,7 @@ export const Home = () => {
       />
 
       <View className="mt-5">
-        <Text className="ml-4 text-xl">Discover items</Text>
+        <Text className="ml-4 text-xl">Discover items near you</Text>
         <View className="mt-2 ml-4 mr-60 flex flex-row justify-between">
           <TouchableOpacity className="items-center justify-center rounded-sm bg-[#2196F3] px-2">
             <Text className="text-white" onPress={() => Alert.alert("Auction")}>
