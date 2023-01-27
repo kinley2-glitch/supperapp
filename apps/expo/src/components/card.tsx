@@ -8,6 +8,12 @@ export const CardItem = () => {
     { name: "Acer", status: "live", username: "karama" },
     { name: "Dell", status: "upcoming", username: "tim" },
     { name: "3" },
+    { name: "Acer", status: "live", username: "karama" },
+    { name: "Dell", status: "upcoming", username: "tim" },
+    { name: "3" },
+    { name: "Acer", status: "live", username: "karama" },
+    { name: "Dell", status: "upcoming", username: "tim" },
+    { name: "3" },
   ];
 
   const [selectedIndices, setSelectedIndices] = useState<number[]>([]);
